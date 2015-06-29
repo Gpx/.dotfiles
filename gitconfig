@@ -1,0 +1,16 @@
+[alias]
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  gfo = git fetch origin
+[color]
+	ui = true
+[user]
+	name = Gpx
+	email = polvara@gmail.com
+[push]
+	default = simple
+[core]
+	editor = vim
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
