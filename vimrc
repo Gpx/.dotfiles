@@ -82,6 +82,9 @@ Plugin 'guns/xterm-color-table.vim'
 " Syntax checking hacks for vim
 Plugin 'scrooloose/syntastic'
 
+" A dummy text generator
+Plugin 'loremipsum'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
