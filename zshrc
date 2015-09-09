@@ -103,6 +103,9 @@ alias gnb="git checkout -b"
 
 alias count_queries='perl -nle "print $& if m{(?<=collection=)(\w+)|(?<=:count=>\")(\w+)}" log/development.log | sort | uniq -c; cat log/development.log | grep MOPED | wc -l'
 
+# Enable http://localtunnel.me/
+unalias lt
+
 # Restore vim with C-z
 foreground() {
   fg
