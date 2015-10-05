@@ -130,3 +130,6 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # Enable z
 . `brew --prefix`/etc/profile.d/z.sh
 ZSH_Highlight_highlighters=(main brackets)
+
+# Enable nvm https://github.com/creationix/nvm
+. ~/.nvm/nvm.sh
