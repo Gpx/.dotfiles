@@ -85,6 +85,9 @@ Plugin 'scrooloose/syntastic'
 " A dummy text generator
 Plugin 'loremipsum'
 
+" React JSX syntax highlighting and indenting for vim.
+Plugin 'mxw/vim-jsx'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -124,6 +127,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Soft tabs of 4 characters
 set expandtab " Tabs are spaces
@@ -301,3 +305,6 @@ nnoremap <leader>u :GundoToggle<CR> " Toggle Gundo
 
 " Save session
 nnoremap <leader>s :mksession<CR>
+
+" JSX syntax
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
