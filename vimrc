@@ -106,9 +106,7 @@ filetype plugin indent on    " required
 let mapleader="," " Leader is comma
 
 syntax enable " Pretty obvious
-let g:solarized_termcolors = 256 " Enable 256 colors support for solarized
-set background=dark " Use solarized dark theme
-colorscheme solarized " Use solarized theme
+colorscheme default " Use default theme
 let g:airline_powerline_fonts = 1 " Use powerline fonts (eg an arrow instead of >)
 let g:airline_theme = "light" " Use light them for airline
 set cursorline " Highlight current line
