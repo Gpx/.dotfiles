@@ -113,8 +113,7 @@ set cursorline " Highlight current line
 set timeoutlen=50 " Reduce wait for keycode -> faster Esc
 set laststatus=2 " Always display the status line
 set textwidth=80
-set colorcolumn=+1 " Highlight column 81
-highlight ColorColumn ctermbg=red " Highlight color is red
+highlight CursorLine cterm=none ctermbg=58
 
 " Syntastic settings
 set statusline+=%#warningmsg#
