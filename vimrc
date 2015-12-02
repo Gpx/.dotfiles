@@ -178,9 +178,30 @@ let g:EasyMotion_smartcase = 1
 " Center current line with <space>
 nmap <space> zz
 
-" Enable spell check
-set nospell
+" Set filetype to markdown when opening a .md file
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" Spell check
+" Commands:
+"   zg -> add word to spell file
+"   z= -> word suggestions
+set nospell " Disabled by default
+" Enable with s
 nmap s :set spell!<CR>
+
+"Automatic spellcheck markdown files
+autocmd FileType markdown setlocal spell
+
+"Spellcheck git commits
+autocmd FileType gitcommit setlocal spell
+
+" Define location for spellfile
+" You can add words to this file with `zg`
+set spellfile=$HOME/.vim-spell-en.utf-8.add
+
+" Autocomplete with dictionary words when spellcheck is on
+set complete+=kspell
+
 
 " Move to beginning/end of line with B/E
 nnoremap B ^
