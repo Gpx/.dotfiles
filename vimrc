@@ -125,6 +125,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_html_tidy_quiet_messages = { "level" : "warnings" }
 
 " Soft tabs of 4 characters
 set expandtab " Tabs are spaces
