@@ -132,4 +132,5 @@ source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_Highlight_highlighters=(main brackets)
 
 # Enable nvm https://github.com/creationix/nvm
-. ~/.nvm/nvm.sh
+export NVM_DIR=~/.nvm
+. "$NVM_DIR/nvm.sh"
