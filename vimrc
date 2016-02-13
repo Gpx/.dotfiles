@@ -88,6 +88,9 @@ Plugin 'loremipsum'
 " React JSX syntax highlighting and indenting for vim.
 Plugin 'mxw/vim-jsx'
 
+" Vim plugin for the Elm programming language
+Plugin 'lambdatoast/elm.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
