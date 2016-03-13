@@ -134,3 +134,6 @@ ZSH_Highlight_highlighters=(main brackets)
 # Enable nvm https://github.com/creationix/nvm
 export NVM_DIR=~/.nvm
 . "$NVM_DIR/nvm.sh"
+
+# added by travis gem
+[ -f /Users/giorgio/.travis/travis.sh ] && source /Users/giorgio/.travis/travis.sh
