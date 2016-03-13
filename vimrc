@@ -91,6 +91,9 @@ Plugin 'mxw/vim-jsx'
 " Vim plugin for the Elm programming language
 Plugin 'lambdatoast/elm.vim'
 
+" Elixir syntax highlighting and indenting for vim.
+Plugin 'elixir-lang/vim-elixir'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
