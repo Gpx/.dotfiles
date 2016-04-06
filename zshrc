@@ -103,6 +103,8 @@ alias gnb="git checkout -b"
 
 alias count_queries='perl -nle "print $& if m{(?<=collection=)(\w+)|(?<=:count=>\")(\w+)}" log/development.log | sort | uniq -c; cat log/development.log | grep MOPED | wc -l'
 
+alias weather="curl wttr.in"
+
 # Enable http://localtunnel.me/
 unalias lt
 
