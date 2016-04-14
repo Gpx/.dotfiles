@@ -92,8 +92,6 @@ source ~/.zsh.fundbase
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias rg="rake -g"
-
 # Git
 alias gbd="git branch -d \$(git branch | pick)"
 alias gbD="git branch -D \$(git branch | pick)"
@@ -104,6 +102,25 @@ alias gnb="git checkout -b"
 alias count_queries='perl -nle "print $& if m{(?<=collection=)(\w+)|(?<=:count=>\")(\w+)}" log/development.log | sort | uniq -c; cat log/development.log | grep MOPED | wc -l'
 
 alias weather="curl wttr.in"
+
+# Shorcuts
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Get updates
+alias update='sudo softwareupdate -i -a'
+
+# IP addresses
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Lock the screen (when going AFK)
+alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+
+# Reinstall npm packages for local project
+alias coffeebreak="rm -Rf node_modules/ && npm cache clean -f && npm install"
 
 # Enable http://localtunnel.me/
 unalias lt
