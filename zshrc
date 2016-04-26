@@ -98,6 +98,7 @@ alias gbD="git branch -D \$(git branch | pick)"
 alias gcb="git checkout \$(git branch | pick)"
 alias gfo="git fetch origin"
 alias gnb="git checkout -b"
+alias grb2="git rebase -i HEAD~2"
 
 alias count_queries='perl -nle "print $& if m{(?<=collection=)(\w+)|(?<=:count=>\")(\w+)}" log/development.log | sort | uniq -c; cat log/development.log | grep MOPED | wc -l'
 
@@ -120,7 +121,7 @@ alias localip="ipconfig getifaddr en0"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reinstall npm packages for local project
-alias coffeebreak="rm -Rf node_modules/ && npm cache clean -f && npm install"
+alias coffeebreak="rm -Rf node_modules/ && npm install"
 
 # Enable http://localtunnel.me/
 unalias lt
