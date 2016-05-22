@@ -48,12 +48,13 @@ Plugin 'scrooloose/nerdcommenter'
 
 " Lean & mean status/tabline for vim that's light as air
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Simple tmux statusline generator
 Plugin 'edkolev/tmuxline.vim'
 
 " Simple shell prompt generator
-Plugin 'edkolev/promptline.vim'
+" Plugin 'edkolev/promptline.vim'
 
 " True Sublime Text style multiple selections for Vim
 Plugin 'terryma/vim-multiple-cursors'
@@ -97,6 +98,9 @@ Plugin 'elixir-lang/vim-elixir'
 " Vim configuration for Rust.
 Plugin 'rust-lang/rust.vim'
 
+" one colorscheme pack to rule them all!
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -116,13 +120,15 @@ let mapleader="," " Leader is comma
 
 syntax enable " Pretty obvious
 colorscheme default " Use default theme
-let g:airline_powerline_fonts = 1 " Use powerline fonts (eg an arrow instead of >)
-let g:airline_theme = "light" " Use light them for airline
-set cursorline " Highlight current line
+set nocursorline " Don't highlight current line
 set timeoutlen=50 " Reduce wait for keycode -> faster Esc
 set laststatus=2 " Always display the status line
 set textwidth=80
-highlight CursorLine cterm=none ctermbg=58
+let g:airline_powerline_fonts = 1
+let g:airline_theme='luna'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " Syntastic settings
 set statusline+=%#warningmsg#
