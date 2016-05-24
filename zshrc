@@ -122,6 +122,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reinstall npm packages for local project
 alias coffeebreak="rm -Rf node_modules/ && npm install"
 
+# List 10 biggest files/folder
+alias ducks="du -cks * | sort -rn | head"
+
 # Enable http://localtunnel.me/
 unalias lt
 
