@@ -123,7 +123,6 @@ colorscheme default " Use default theme
 set nocursorline " Don't highlight current line
 set timeoutlen=50 " Reduce wait for keycode -> faster Esc
 set laststatus=2 " Always display the status line
-set textwidth=80
 let g:airline_powerline_fonts = 1
 let g:airline_theme='luna'
 let g:airline#extensions#branch#enabled = 1
