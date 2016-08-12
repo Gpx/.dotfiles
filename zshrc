@@ -64,8 +64,6 @@ export PATH="Users/giorgio/mongodb/bin:$PATH"
 # PostgreSql
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
-source ~/.zsh.fundbase
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -98,8 +96,6 @@ alias gcb="git checkout \$(git branch | pick)"
 alias gfo="git fetch origin"
 alias gnb="git checkout -b"
 alias grb2="git rebase -i HEAD~2"
-
-alias count_queries='perl -nle "print $& if m{(?<=collection=)(\w+)|(?<=:count=>\")(\w+)}" log/development.log | sort | uniq -c; cat log/development.log | grep MOPED | wc -l'
 
 alias weather="curl wttr.in"
 
@@ -147,15 +143,26 @@ run() {
 }
 
 # Enable zsh-syntax-highlighting
-source ~/.oh-my-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Enable z
-. `brew --prefix`/etc/profile.d/z.sh
 ZSH_Highlight_highlighters=(main brackets)
 
 # Enable nvm https://github.com/creationix/nvm
 export NVM_DIR=~/.nvm
 . "$NVM_DIR/nvm.sh"
+
+# automatically read .nvmrc files
+autoload -U add-zsh-hook
+load-nvmrc() {
+  if [[ -f .nvmrc && -r .nvmrc ]]; then
+    nvm use
+  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # added by travis gem
 [ -f /Users/giorgio/.travis/travis.sh ] && source /Users/giorgio/.travis/travis.sh

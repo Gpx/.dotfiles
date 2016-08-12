@@ -148,8 +148,8 @@ set softtabstop=2 " When pressing tab use 2 spaces instead
 set shiftwidth=2 " Indenting by 2 spaces (eg when using >>)
 
 " Those two commands enable an hybrid mode
-set number " Show line numbers
 set relativenumber " Show relative line numbers
+set number " Show line numbers
 set numberwidth=5 " Number lane is 5 char width
 
 " Open new split panes to right and bottom, which feels more natural
