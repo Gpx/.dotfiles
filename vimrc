@@ -101,6 +101,9 @@ Plugin 'rust-lang/rust.vim'
 " one colorscheme pack to rule them all!
 Plugin 'flazz/vim-colorschemes'
 
+" A better JSON for Vim
+Plugin 'elzr/vim-json'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

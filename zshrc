@@ -89,6 +89,10 @@ export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Vim
+
+alias vi=vim
+
 # Git
 alias gbd="git branch -d \$(git branch | pick)"
 alias gbD="git branch -D \$(git branch | pick)"
@@ -97,6 +101,7 @@ alias gfo="git fetch origin"
 alias gnb="git checkout -b"
 alias grb2="git rebase -i HEAD~2"
 
+# Weather
 alias weather="curl wttr.in"
 
 # Shorcuts
