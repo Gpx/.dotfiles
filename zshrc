@@ -129,6 +129,11 @@ alias ducks="du -cks * | sort -rn | head"
 # Enable http://localtunnel.me/
 unalias lt
 
+# Check which process is running on a port
+check-port() {
+  lsof -i tcp:$1
+}
+
 # Restore vim with C-z
 foreground() {
   fg
