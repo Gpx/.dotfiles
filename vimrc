@@ -107,6 +107,9 @@ Plugin 'elzr/vim-json'
 " Vim syntax and indent files for web components
 Plugin 'azakus/vim-webcomponents'
 
+" Vim syntax and language settings for RAML
+Plugin 'in3d/vim-raml'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
