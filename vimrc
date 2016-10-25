@@ -104,6 +104,9 @@ Plugin 'flazz/vim-colorschemes'
 " A better JSON for Vim
 Plugin 'elzr/vim-json'
 
+" Vim syntax and indent files for web components
+Plugin 'azakus/vim-webcomponents'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
