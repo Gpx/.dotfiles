@@ -116,6 +116,9 @@ Plugin 'quramy/vison'
 " A vim plugin for highlighting and indenting JST/EJS syntax
 Plugin 'briancollins/vim-jst'
 
+" Vim bundle for http://styled-components.com based javascript files.
+Plugin 'fleischie/vim-styled-components'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -143,6 +146,9 @@ let g:airline_theme='luna'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
+
+" Print formatted code one a single page
+set printoptions=paper:A4,syntax:y,wrap:y,duplex:off
 
 " Syntastic settings
 set statusline+=%#warningmsg#
