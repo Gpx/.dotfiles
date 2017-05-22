@@ -16,9 +16,6 @@ Plugin 'kien/ctrlp.vim'
 " NERD tree
 Plugin 'scrooloose/nerdtree'
 
-" CoffeeScript support
-Plugin 'kchmck/vim-coffee-script'
-
 " Solarized Colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
@@ -118,6 +115,9 @@ Plugin 'briancollins/vim-jst'
 
 " Vim bundle for http://styled-components.com based javascript files.
 Plugin 'fleischie/vim-styled-components'
+
+" A (Neo)vim plugin for formatting code.
+Plugin 'sbdchd/neoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -362,3 +362,15 @@ nnoremap <leader>s :mksession<CR>
 
 " JSX syntax
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Run autoformat on save
+let g:neoformat_javascript_prettier = {
+  \ 'exe': 'node_modules/.bin/prettier',
+  \ 'args': ['--stdin', '--no-semi', '--single-quote', '--jsx-bracket-same-line=false', '--trailing-comma=es5', '--parser=flow'],
+  \ 'stdin': 1,
+  \ }
+let g:neoformat_enabled_javascript = ['prettier']
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
