@@ -129,6 +129,9 @@ alias ducks="du -cks * | sort -rn | head"
 # Enable http://localtunnel.me/
 unalias lt
 
+# Change MAC address
+alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
+
 # Check which process is running on a port
 check-port() {
   lsof -i tcp:$1
