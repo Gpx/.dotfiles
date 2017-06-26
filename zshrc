@@ -180,3 +180,6 @@ load-nvmrc
 
 # added by travis gem
 [ -f /Users/giorgio/.travis/travis.sh ] && source /Users/giorgio/.travis/travis.sh
+
+# Enable cargo
+source $HOME/.cargo/env
