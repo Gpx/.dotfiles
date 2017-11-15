@@ -132,6 +132,9 @@ unalias lt
 # Change MAC address
 alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
 
+# Open Chrome Canary with CORS disabled
+alias dev-chrome="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --user-data-dir &"
+
 # Check which process is running on a port
 check-port() {
   lsof -i tcp:$1
@@ -154,6 +157,13 @@ run() {
     echo Execution $i
     $@
   done
+}
+
+clean-docker() {
+  docker rm $(docker ps -a -q)
+  docker rmi $(docker images -q)
+  docker volume rm $(docker volume ls |awk '{print $2}')
+  rm -rf ~/Library/Containers/com.docker.docker/Data/*
 }
 
 # Enable zsh-syntax-highlighting
