@@ -121,7 +121,7 @@ alias localip="ipconfig getifaddr en0"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Reinstall npm packages for local project
-alias coffeebreak="rm -Rf node_modules/ && npm install"
+alias coffeebreak="nvm use && rm -Rf node_modules/ && npm install --no-save"
 
 # List 10 biggest files/folder
 alias ducks="du -cks * | sort -rn | head"
@@ -193,3 +193,4 @@ load-nvmrc
 
 # Enable cargo
 source $HOME/.cargo/env
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
