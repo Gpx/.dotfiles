@@ -124,7 +124,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias coffeebreak="nvm use && rm -Rf node_modules/ && npm install --no-save"
 
 # List 10 biggest files/folder
-alias ducks="du -cks * | sort -rn | head"
+alias ducks="ncdu --rr"
 
 # Enable http://localtunnel.me/
 unalias lt
@@ -194,3 +194,5 @@ load-nvmrc
 # Enable cargo
 source $HOME/.cargo/env
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
