@@ -196,3 +196,7 @@ source $HOME/.cargo/env
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# One login credentials
+alias aws-onelogin-login='docker run -it -v ~/.aws:/root/.aws awsaccess:latest python src/onelogin/aws-assume-role/aws-assume-role.py --onelogin-username giorgio@travelperk.com --onelogin-subdomain travelperk --onelogin-app-id 359880 --aws-region eu-west-1 --profile default'
+alias docker-login='eval $(aws ecr get-login --region eu-west-1 --no-include-email)'

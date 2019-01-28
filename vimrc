@@ -140,7 +140,8 @@ filetype plugin indent on    " required
 let mapleader="," " Leader is comma
 
 syntax enable " Pretty obvious
-colorscheme default " Use default theme
+colorscheme Green " Somehow needed to reset the colorcheme
+colorscheme gruvbox " Use gruvbox theme
 set nocursorline " Don't highlight current line
 set timeoutlen=50 " Reduce wait for keycode -> faster Esc
 set laststatus=2 " Always display the status line

@@ -11,6 +11,7 @@
 [core]
 	editor = vim
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	ignore = false
 [filter "media"]
 	required = true
 	clean = git media clean %f
