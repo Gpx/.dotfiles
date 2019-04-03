@@ -47,9 +47,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Simple tmux statusline generator
-Plugin 'edkolev/tmuxline.vim'
-
 " Simple shell prompt generator
 " Plugin 'edkolev/promptline.vim'
 

@@ -45,10 +45,7 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git jira brew bower common-aliases)
-
-# Make autojump work
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -56,13 +53,6 @@ source $ZSH/oh-my-zsh.sh
 
 # Allow [ or ] whereever you want
 unsetopt nomatch
-
-export PATH="/usr/local/bin:/Users/giorgio/.rbenv/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/giorgio/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-export PATH="Users/giorgio/mongodb/bin:$PATH"
-
-# PostgreSql
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -110,43 +100,23 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-# Get updates
-alias update='sudo softwareupdate -i -a'
-
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 
-# Lock the screen (when going AFK)
-alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-
 # Reinstall npm packages for local project
-alias coffeebreak="nvm use && rm -Rf node_modules/ && npm install --no-save"
+alias coffeebreak="nvm use && rm -rf node_modules/ && npm install --no-save"
 
-# List 10 biggest files/folder
+# List biggest files/folder
 alias ducks="ncdu -rr"
-
-# Enable http://localtunnel.me/
-unalias lt
 
 # Change MAC address
 alias freewifi="sudo ifconfig en0 ether `openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`"
-
-# Open Chrome Canary with CORS disabled
-alias dev-chrome="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --user-data-dir &"
 
 # Check which process is running on a port
 check-port() {
   lsof -i tcp:$1
 }
-
-# Restore vim with C-z
-foreground() {
-  fg
-}
-
-zle -N foreground
-bindkey '^Z' foreground
 
 # Run a command n times
 # Usage: run 10 command
@@ -172,28 +142,31 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_Highlight_highlighters=(main brackets)
 
 # Enable nvm https://github.com/creationix/nvm
-export NVM_DIR=~/.nvm
-. "$NVM_DIR/nvm.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # automatically read .nvmrc files
 autoload -U add-zsh-hook
 load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
     echo "Reverting to nvm default version"
     nvm use default
   fi
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
-
-# added by travis gem
-[ -f /Users/giorgio/.travis/travis.sh ] && source /Users/giorgio/.travis/travis.sh
-
-# Enable cargo
-source $HOME/.cargo/env
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
